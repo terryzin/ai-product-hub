@@ -1,0 +1,13 @@
+line: baseline
+kind: baseline
+name: 主基线
+# baseline 自动收 scope=核心 的所有功能；scope=客户独占 的被约束排除。
+include_rule: "scope == 核心"
+overrides: []
+excludes: []
+release_lines:        # 真实出货线（版本管理 sheet）—— 参考
+  - 企业版-单机
+  - 企业版-协作
+  - 企业版-多车
+  - 教育版-教学
+  - 教育版-科研

@@ -1,0 +1,23 @@
+line: greatwall
+kind: branch
+name: 长城-协作
+customer: 长城
+version: "3.6"
+
+# profile = 默认跟随核心 + 独占 + 覆盖 + 排除。本文件即长城产品线的全部定义。
+# ⚠ 禁止用 git branch 表达本线 —— 否则双向 merge 地狱原样请回来。
+follow_core: true                 # 默认收所有 scope=核心 的功能（baseline → 长城 自动跟）
+
+include_exclusive:                # 5 个客户独占（仅长城）
+  - F-0430                        # 钉钉集成
+  # - F-xxxx  （Docker镜像接入 / 自定义算子镜像管理 / 第三方交通流管理 / 自定义标签大类）
+
+overrides:                        # 7 个继承指针 —— rebase 到平台新版本时，要人工核对的就这些
+  # - feature: F-xxxx
+  #   cell: ...
+  #   inherit_from: ...
+
+excludes: []                      # 长城显式不要的核心功能（默认空）
+
+# 作用域画像（演示数据）：130 功能 = 103 已在核心 + 22 可晋升 + 5 独占。
+# 真正要人工 review 的：仅 5 个独占在新平台是否兼容。其余自动。

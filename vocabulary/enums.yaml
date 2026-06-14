@@ -1,0 +1,13 @@
+# 工作流 / 治理受控取值
+feature_status:   [草稿, 评审中, 已定稿, 开发中, 已发布, 废弃]
+revision_state:   [draft, approved, superseded]
+lifecycle:        [active, deprecated, retired]    # revision / interface 生命周期
+
+scope:            [核心, 可晋升, 客户独占]          # 作用域策略（决定能否进 baseline）
+membership:       [纳入, 排除, 覆盖]                # 产品线对某功能的归属
+
+dependency_kind:  [composes, requires, extends]    # 依赖边种类
+pin:              [exact, compatible, interface_only]  # 依赖锁定策略
+
+proposal_status:  [pending, approved, rejected]
+risk_tier:        [低, 中, 高]                      # 渐进放权旋钮

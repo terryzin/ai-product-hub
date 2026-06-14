@@ -1,0 +1,33 @@
+# 变体维度 —— 驱动适用性(presence)与行为差异(override / parameter)
+# 默认 default-on：无标注 = 适用全部取值。
+# 注：features 里用 6 个"变体单元"token（= 版本形态 × 商业版 的出货组合），见文件末。
+
+dimensions:
+  form:        # 版本形态
+    label: 版本形态
+    values:    {standalone: 单机版, collab_client: 协作版-客户端, collab_cloud: 协作版-云端}
+  edition:     # 商业版
+    label: 商业版
+    values:    {standard: 标准版, teaching: 教学版, research: 科研版}
+  os:          # 操作系统  ⚠ 缺口：旧表仅版本级，需下沉到功能级
+    label: 操作系统
+    values:    {win: Windows, linux: Linux}
+  config:      # 车辆配置  ⚠ 缺口：旧表无，新建（"主车数量>1"即多车）
+    label: 车辆配置
+    values:    {single: 单车, multi: 多车}
+  domain:      # 行业领域
+    label: 行业领域
+    default:   generic
+    values:    {generic: 通用, ad: 智驾, mining: 矿卡, port: 港机, agri: 农机, vessel: 无人船, uav: 无人机}
+
+# 打包耦合：商业版 × 版本形态 = 稀疏网格（产品线层声明，非每功能）
+# 旧表 6 列 = 这 6 个出货组合：
+variant_cells:
+  standalone:          {form: standalone,    edition: standard}
+  collab_client:       {form: collab_client, edition: standard}
+  collab_cloud:        {form: collab_cloud,  edition: standard}
+  teach_standalone:    {form: standalone,    edition: teaching}
+  research_standalone: {form: standalone,    edition: research}
+  teach_collab:        {form: collab,        edition: teaching}   # 端/云未区分，待定
+
+# 已证实耦合：无"科研-协作"组合（科研仅单机出货）。
