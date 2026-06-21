@@ -14,5 +14,6 @@
 __pycache__/
 *.pyc
 
-# 原始二进制源文件（体积大/非文本；其 AI 友好的文本提取见 raw/extracted/）
-raw/*.xlsx
+# 原始二进制源文件：仅忽略超大的资产汇总（112MB，超 GitHub 上限）
+# 其余 .xlsx（如 88K 的功能版本管理表）正常入库做溯源；文本提取见 raw/extracted/
+raw/仿真平台资源汇总.xlsx
