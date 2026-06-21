@@ -47,3 +47,23 @@ gh project item-add 8 --owner terryzin --url <issue-url>
 gh issue comment <n> --repo terryzin/ai-product-hub --body "…"
 gh issue close <n> --repo terryzin/ai-product-hub
 ```
+
+## Git 提交与推送约定（强制）
+
+**我（agent）自主负责 commit 与 push，无需每次征求同意。** 目标：给用户留下清晰的工作历史，并让任何一步都容易回滚。
+
+铁律：
+
+1. **一项工作做完即提交。** 以"一个完成的工作单元"为粒度提交（如：归档一批输入、完成一份分析、提取一份文档）。鼓励**频繁、小步**提交，不要把多项不相关改动攒成一个大提交。
+2. **提交后及时 push 到 `origin/main`**，让历史对用户可见、可追溯、可回滚。
+3. **提交信息用中文、简洁说明"改了什么、为什么"**，可带类型前缀（`feat` / `docs` / `chore` / `fix` / `refactor`）。
+4. **只提交该提交的内容。** 临时文件、虚拟环境（`.venv/`）、大的二进制源文件等不纳入（见 `.gitignore`）。
+5. **频繁提交 ≠ 跳过审批。** 日常推进用 commit/push 直推 `main`；**后果性/破坏性改动**（Spec 定稿、合并、发布）仍走 PR 由人审批（见上节与 `CONVENTIONS.md §7`）。
+
+常用命令：
+
+```bash
+git add <paths>
+git commit -m "docs(foundation): 增补用户画像深度分析"
+git push
+```
