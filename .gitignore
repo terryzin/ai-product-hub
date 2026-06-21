@@ -17,3 +17,8 @@ __pycache__/
 # 原始二进制源文件：仅忽略超大的资产汇总（112MB，超 GitHub 上限）
 # 其余 .xlsx（如 88K 的功能版本管理表）正常入库做溯源；文本提取见 raw/extracted/
 raw/仿真平台资源汇总.xlsx
+
+# 字体二进制（体积大、可从官方复现）；保留 assets/fonts/README.md 与 LICENSE.txt
+assets/fonts/*.otf
+assets/fonts/*.ttf
+assets/fonts/*.ttc
