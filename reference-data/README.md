@@ -1,4 +1,4 @@
-# 源表提取 — Excel 源表的 AI 友好提取
+# reference-data — Excel 源表的 AI 友好提取
 
 把 raw/ 下三份 Excel 转成结构化、机器可读的 Markdown，方便后续 AI 分析。**每个工作表 = 一个 .md**：YAML 头装元信息（来源/表头行/分组/注释），正文是字段字典 + 完整数据表。
 
@@ -97,7 +97,7 @@
 源 Excel 更新后，用通用抽取脚本重跑即可（每个工作表→一个 .md，前 3 行取非空最多者为表头，模板/表单壳自动跳过）：
 
 ```bash
-python tools/xlsx2extracted.py "raw/【51Sim需求管理】.xlsx" "源表提取/需求管理"
+python tools/xlsx2extracted.py "raw/　51Sim需求管理】.xlsx" "reference-data/需求管理"
 ```
 
 转换依赖：`openpyxl`。

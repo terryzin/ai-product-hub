@@ -3,14 +3,14 @@
 xlsx2extracted.py —— 把 raw/ 下的 Excel 转成 AI 友好的结构化 Markdown 快照。
 
 每个工作表 = 一个 .md：YAML 头（来源/表头行/行列数）+ 字段字典 + 完整数据表。
-与 源表提取/ 既有产出格式一致。纯确定性、可重跑。
+与 reference-data/ 既有产出格式一致。纯确定性、可重跑。
 
 表头识别：前 3 行里非空单元格最多的那行即真实列名行（1-based 记入 header_row）。
 数据：列名行以下全部非空行；空单元格留空；换行→<br>；datetime→YYYY-MM-DD。
 空列（无标题）记为「(空列_X)」。整表无数据行的工作表跳过（记入 SKIPPED）。
 
 用法：
-  python tools/xlsx2extracted.py "raw/【51Sim需求管理】.xlsx" "源表提取/需求管理"
+  python tools/xlsx2extracted.py "raw/　51Sim需求管理】.xlsx" "reference-data/需求管理"
 """
 import datetime
 import re

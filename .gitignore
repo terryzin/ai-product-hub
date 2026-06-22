@@ -15,7 +15,7 @@ __pycache__/
 *.pyc
 
 # 私有一手输入（含大体积源文档/网盘提取码/客户数据，本仓库为 PUBLIC）——整个 raw/ 不入库
-# 抽取出的结构化文本见 源表提取/，录音转写见 录音转写/
+# 抽取出的结构化文本见 reference-data/，录音转写见 inputs/
 raw/
 
 # 字体二进制（体积大、可从官方复现）；保留 assets/fonts/README.md 与 LICENSE.txt
